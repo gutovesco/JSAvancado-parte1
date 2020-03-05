@@ -1,17 +1,16 @@
-class View{
-
-    constructor(elemento){
-    this._elemento = elemento;
+class View {
+    
+    constructor(elemento) {
+        
+        this._elemento = elemento;
     }
-    template(model){
-        return model.texto ?  `
-        <p class="alert alert-info">
-        ${model.texto}
-        </p>` :
-        `<p></p>`;
+    
+    template() {
+        
+        throw new Error('O método template deve ser implementado');
     }
-
-    update(model){
+    
+    update(model) {
         this._elemento.innerHTML = this.template(model);
     }
 }
